@@ -10,10 +10,16 @@ int main()
 {
 
     auto startKamer = std::make_shared<Room>("Start Kamer", "Dit is een lege kamer met een stoel. Er lopen overal ratten. er is een deur.");
-    auto RaadselKamer = std::make_shared<Room>("RaadselKamer", "JOOOOOO");
+    auto raadselKamer = std::make_shared<Room>("RaadselKamer", "JOOOOOO");
+	auto codeKamer = std::make_shared<Room>("CodeKamer", "CODEEEEE");
 
 
-    startKamer->exits["North"] = RaadselKamer;
+    startKamer->exits["North"] = raadselKamer;
+    startKamer->exits["East"] = codeKamer;
+
+
+	raadselKamer->exits["South"] = startKamer;
+	codeKamer->exits["West"] = startKamer;
 
 
 
