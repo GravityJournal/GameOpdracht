@@ -2,5 +2,5 @@
 
 class Room
 {
-
+	int test;
 };
