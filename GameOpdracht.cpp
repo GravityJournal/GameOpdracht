@@ -1,11 +1,26 @@
 // GameOpdracht.cpp : This file contains the 'main' function. Program execution begins and ends there.
 //
-
+#include <memory>
 #include <iostream>
+#include <algorithm>
+#include <map>
+#include "Room.h"
 
 int main()
 {
-    std::cout << "Hello World!\n";
+
+    auto startKamer = std::make_shared<Room>("Start Kamer", "Dit is een lege kamer met een stoel. Er lopen overal ratten. er is een deur.");
+    auto RaadselKamer = std::make_shared<Room>("RaadselKamer", "JOOOOOO");
+
+
+    startKamer->exits["North"] = RaadselKamer;
+
+
+
+
+
+    
+    
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
